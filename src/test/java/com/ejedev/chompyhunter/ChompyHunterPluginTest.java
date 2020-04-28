@@ -1,4 +1,4 @@
-package com.ejedev.chompyhunter;
+package ejedev.chompyhunter;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
