@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.chompyhunter;
+package ejedev.chompyhunter;
 import net.runelite.api.*;
 import net.runelite.client.ui.overlay.*;
 import net.runelite.client.ui.overlay.components.LineComponent;
