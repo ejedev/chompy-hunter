@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.chompyhunter;
+package ejedev.chompyhunter;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
