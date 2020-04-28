@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.chompyhunter;
+package ejedev.chompyhunter;
 import lombok.AccessLevel;
 import lombok.Getter;
 import net.runelite.api.ChatMessageType;
