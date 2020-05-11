@@ -80,7 +80,7 @@ public class ChompyHunterPlugin extends Plugin{
     }
 
     @Subscribe
-    private void onNpcSpawned(NpcSpawned event)
+   private void onNpcSpawned(NpcSpawned event)
     {
         NPC npc = event.getNpc();
 
@@ -91,21 +91,22 @@ public class ChompyHunterPlugin extends Plugin{
 
         String name = event.getNpc().getName();
 
-        assert name != null;
-        if (name.equals("Chompy bird") && !chompies.containsKey(npc.getIndex()))
-        {
-            chompies.put(npc.getIndex(), new Chompy(npc));
+        if (name != null) {
+            if (name.equals("Chompy bird") && !chompies.containsKey(npc.getIndex())) {
+                chompies.put(npc.getIndex(), new Chompy(npc));
+            }
         }
     }
 
-    @Subscribe
+   @Subscribe
     private void onNpcDespawned(NpcDespawned event)
     {
         NPC npc = event.getNpc();
         String name = event.getNpc().getName();
-        assert name != null;
-        if (name.equals("Chompy bird") && chompies.containsKey(npc.getIndex())) {
-            chompies.remove(event.getNpc().getIndex());
+        if (name != null) {
+            if (name.equals("Chompy bird") && chompies.containsKey(npc.getIndex())) {
+                chompies.remove(event.getNpc().getIndex());
+            }
         }
     }
 }
