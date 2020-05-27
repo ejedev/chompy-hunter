@@ -94,6 +94,9 @@ public class ChompyHunterPlugin extends Plugin{
         if (name != null) {
             if (name.equals("Chompy bird") && !chompies.containsKey(npc.getIndex())) {
                 chompies.put(npc.getIndex(), new Chompy(npc));
+                if (config.notifyChompySpawn()) {
+                    notifier.notify("A chompy has spawned!");
+                }
             }
         }
     }
