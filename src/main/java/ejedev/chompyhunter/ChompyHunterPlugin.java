@@ -1,8 +1,10 @@
 package ejedev.chompyhunter;
+import com.google.inject.Provides;
 import lombok.AccessLevel;
 import lombok.Getter;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.events.NpcDespawned;
+import net.runelite.client.config.ConfigManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import javax.inject.Inject;
@@ -15,6 +17,7 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.client.Notifier;
 
 
 @PluginDescriptor(
@@ -29,6 +32,15 @@ public class ChompyHunterPlugin extends Plugin{
 
     @Inject
     private OverlayManager overlayManager;
+
+    @Inject
+    private ChompyHunterConfig config;
+
+    @Provides
+    ChompyHunterConfig provideConfig(ConfigManager configManager)
+    {
+        return configManager.getConfig(ChompyHunterConfig.class);
+    }
 
     @Override
     protected void startUp()
@@ -68,6 +80,9 @@ public class ChompyHunterPlugin extends Plugin{
 
     @Inject
     private ChompyHunterInfoOverlay overlayInfo;
+
+    @Inject
+    private Notifier notifier;
 
     @Subscribe
     public void onChatMessage(ChatMessage chatMessage) {
