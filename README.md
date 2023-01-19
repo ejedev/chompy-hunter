@@ -7,3 +7,6 @@ Improves chompy bird hunting.
 - Highlight changes to yellow at 30 seconds and red at 15 seconds.
 - Tracks total kills, session kills and kills per hour.
 *Must check ogre bow to set total kills
+
+![image](https://user-images.githubusercontent.com/16944807/213571409-4362f2cc-817e-4d30-8c6b-77a95c23e24a.png)
+
