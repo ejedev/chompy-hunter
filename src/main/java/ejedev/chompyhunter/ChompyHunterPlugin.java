@@ -24,8 +24,8 @@ import net.runelite.client.Notifier;
 
 @PluginDescriptor(
         name = "Chompy Hunter",
-        description = "A plugin to overlay chompy birds with a timer and colour based on remaining time till despawn.",
-        tags = {"chompy", "bird", "hunt", "hunting", "chompies"},
+        description = "A plugin to overlay chompy birds with a timer and colour based on remaining time till despawn. This is an updated version originally by ejedev.",
+        tags = {"chompy", "bird", "hunt", "hunting", "chompies", "track", "count", "western"},
         loadWhenOutdated = true,
         enabledByDefault = false
 )
@@ -104,7 +104,6 @@ public class ChompyHunterPlugin extends Plugin{
         if (Chompy_KC_REGEX.matcher(chatMessage.getMessage()).matches() && chatMessage.getType() == ChatMessageType.GAMEMESSAGE) {
             ChompyTotalKills = Integer.parseInt(chatMessage.getMessage().replaceAll("[^0-9]", ""));
         }
-
     }
 
     @Subscribe

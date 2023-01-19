@@ -31,12 +31,13 @@ public class ChompyHunterInfoOverlay extends OverlayPanel {
         if (plugin.getChompyKills() < 1 && plugin.getChompyTotalKills() < 1) {
             return null;
         } else {
+            panelComponent.setPreferredSize(new Dimension(175, 0));
             panelComponent.getChildren().add(TitleComponent.builder()
-                    .text("Chompy Hunting")
+                    .text("Chompy Hunter")
                     .color(Color.GREEN)
                     .build());
             panelComponent.getChildren().add(LineComponent.builder()
-                    .left("Chompies Killed This Session:")
+                    .left("Chompies This Session:")
                     .right(Integer.toString(plugin.getChompyKills()))
                     .build());
             panelComponent.getChildren().add(LineComponent.builder()
