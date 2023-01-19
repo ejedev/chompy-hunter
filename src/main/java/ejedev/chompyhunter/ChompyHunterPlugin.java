@@ -17,10 +17,8 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-
 import net.runelite.api.events.ChatMessage;
 import net.runelite.client.Notifier;
-
 
 @PluginDescriptor(
         name = "Chompy Hunter",

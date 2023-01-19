@@ -11,7 +11,6 @@ import java.awt.*;
 import java.time.Duration;
 import java.time.Instant;
 
-
 public class ChompyHunterOverlay extends Overlay {
 
     private final ChompyHunterPlugin plugin;
