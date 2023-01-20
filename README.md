@@ -10,6 +10,7 @@ Improves chompy bird hunting.
 - Tracks total kills, session kills and kills per hour.
 
 *Must check ogre bow to set total kills. Can also be used to open the info panel.
+
 ![image](https://user-images.githubusercontent.com/16944807/213596781-56936708-991b-4ca5-a67c-00a20bfee21a.png)
 
 
