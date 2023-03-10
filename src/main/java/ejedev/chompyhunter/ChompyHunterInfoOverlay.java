@@ -28,16 +28,21 @@ public class ChompyHunterInfoOverlay extends OverlayPanel {
 
     @Override
     public Dimension render(Graphics2D graphics) {
-        if (plugin.getChompyKills() < 1) {
+        if (plugin.getChompyKills() < 1 && plugin.getChompyTotalKills() < 1) {
             return null;
         } else {
+            panelComponent.setPreferredSize(new Dimension(175, 0));
             panelComponent.getChildren().add(TitleComponent.builder()
-                    .text("Chompy Hunting")
+                    .text("Chompy Hunter")
                     .color(Color.GREEN)
                     .build());
             panelComponent.getChildren().add(LineComponent.builder()
-                    .left("Chompies Killed:")
+                    .left("Chompies This Session:")
                     .right(Integer.toString(plugin.getChompyKills()))
+                    .build());
+            panelComponent.getChildren().add(LineComponent.builder()
+                    .left("Chompies Killed Total:")
+                    .right(Integer.toString(plugin.getChompyTotalKills()))
                     .build());
             if (plugin.getChompyKills() > 0) {
                 float elapsed = (float) (((Duration.between(plugin.getStartTime(), Instant.now()).getSeconds()) /60.0) /60.0);

@@ -11,7 +11,6 @@ import java.awt.*;
 import java.time.Duration;
 import java.time.Instant;
 
-
 public class ChompyHunterOverlay extends Overlay {
 
     private final ChompyHunterPlugin plugin;
@@ -43,7 +42,7 @@ public class ChompyHunterOverlay extends Overlay {
             if(timeLeft < 30 && timeLeft > 15) {
                 color = Color.ORANGE;
             }
-            else if(timeLeft< 15) {
+            else if(timeLeft<= 15) {
                 color = Color.RED;
             }
             if (chompy.getNpc().getName() != null && chompy.getNpc().getId() == 1475 && timeLeft > -1)

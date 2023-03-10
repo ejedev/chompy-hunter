@@ -16,16 +16,15 @@ import net.runelite.client.ui.overlay.OverlayManager;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.client.Notifier;
 
-
 @PluginDescriptor(
         name = "Chompy Hunter",
-        description = "A plugin to overlay chompy birds with a timer and colour based on remaining time till despawn.",
-        tags = {"chompy", "bird", "hunt", "hunting", "chompies"},
-        loadWhenOutdated = true,
-        enabledByDefault = false
+        description = "A plugin to overlay chompy birds with a timer and colour based on remaining time till despawn. This is an updated version originally by ejedev.",
+        tags = {"chompy", "bird", "hunt", "hunting", "chompies", "track", "count", "western"},
+        loadWhenOutdated = true
 )
 
 public class ChompyHunterPlugin extends Plugin{
@@ -35,6 +34,8 @@ public class ChompyHunterPlugin extends Plugin{
 
     @Inject
     private ChompyHunterConfig config;
+
+    private static final Pattern Chompy_KC_REGEX = Pattern.compile("You've scratched up a total of.*");
 
     @Provides
     ChompyHunterConfig provideConfig(ConfigManager configManager)
@@ -49,6 +50,7 @@ public class ChompyHunterPlugin extends Plugin{
         overlayManager.add(overlayInfo);
         chompies.clear();
         ChompyKills = 0;
+        ChompyTotalKills = 0;
         StartTime = null;
     }
 
@@ -59,6 +61,7 @@ public class ChompyHunterPlugin extends Plugin{
         overlayManager.remove(overlayInfo);
         chompies.clear();
         ChompyKills = 0;
+        ChompyTotalKills = 0;
         StartTime = null;
 
     }
@@ -68,6 +71,8 @@ public class ChompyHunterPlugin extends Plugin{
 
     @Getter(AccessLevel.PACKAGE)
     private int ChompyKills;
+    @Getter(AccessLevel.PACKAGE)
+    private int ChompyTotalKills;
 
     @Getter(AccessLevel.PACKAGE)
     private Instant StartTime;
@@ -91,6 +96,10 @@ public class ChompyHunterPlugin extends Plugin{
                 StartTime = Instant.now();
             }
             ChompyKills++;
+            ChompyTotalKills++;
+        }
+        if (Chompy_KC_REGEX.matcher(chatMessage.getMessage()).matches() && chatMessage.getType() == ChatMessageType.GAMEMESSAGE) {
+            ChompyTotalKills = Integer.parseInt(chatMessage.getMessage().replaceAll("[^0-9]", ""));
         }
     }
 
