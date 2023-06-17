@@ -17,4 +17,24 @@ public interface ChompyHunterConfig extends Config
     {
         return false;
     }
+    @ConfigItem(
+        keyName = "autoHide",
+        name = "Autohide",
+        description = "Hide plugin when not in Castle Wars or Feldip Hiills regions",
+        position = 2
+    )
+default boolean autoHide()
+{
+    return true;
+}
+@ConfigItem(
+        keyName = "autoHideTimeout",
+        name = "Autohide Timeout",
+        description = "Timeout in seconds when leaving region",
+        position = 3
+)
+default int autoHideTimeout()
+{
+    return 60;
+}
 }

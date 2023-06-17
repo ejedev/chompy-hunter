@@ -28,7 +28,7 @@ public class ChompyHunterInfoOverlay extends OverlayPanel {
 
     @Override
     public Dimension render(Graphics2D graphics) {
-        if (plugin.getChompyKills() < 1 && plugin.getChompyTotalKills() < 1) {
+        if (!plugin.getPanelEnabled()) {
             return null;
         } else {
             panelComponent.setPreferredSize(new Dimension(175, 0));
