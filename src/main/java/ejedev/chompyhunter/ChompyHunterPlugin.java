@@ -29,8 +29,7 @@ import net.runelite.client.Notifier;
 @PluginDescriptor(
         name = "Chompy Hunter",
         description = "A plugin to overlay chompy birds with a timer and colour based on remaining time till despawn. This is an updated version originally by ejedev.",
-        tags = {"chompy", "bird", "hunt", "hunting", "chompies", "track", "count", "western"},
-        loadWhenOutdated = true
+        tags = {"chompy", "bird", "hunt", "hunting", "chompies", "track", "count", "western"}
 )
 
 public class ChompyHunterPlugin extends Plugin{
